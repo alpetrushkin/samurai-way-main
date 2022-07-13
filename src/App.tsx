@@ -5,46 +5,66 @@ function hello() {
     debugger
     alert('Hello IT-Kamasutra')
 }
+
 // hello()
 
 function App() {
-    debugger
-  return (
-    <div>
-        This is APP Component
-        <Rating/>
-        <Accordion/>
-    </div>
-  );
+    console.log("App rendering")
+    return (
+        <div>
+            <AppTitle/>
+            <Rating/>
+            <Accordion/>
+            <Rating/>
+        </div>
+    );
+}
+
+function AppTitle() {
+    console.log("AppTitle rendering")
+    return (
+        <>
+            This is APP Component </>
+    )
 }
 
 function Rating() {
-    debugger
+    console.log("Rating rendering")
     return (
         <div>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
-            <Star/>
+            <Star/> <Star/> <Star/> <Star/> <Star/>
         </div>
     )
 }
 
 function Star() {
+    console.log("Star rendering")
     return <div>star</div>
 }
 
 function Accordion() {
-    debugger
+    console.log("Accordion rendering")
     return <div>
+        <AccordionTitle/> <AccordionBody/>
+    </div>
+}
+
+function AccordionTitle() {
+    console.log("AccordionTitle rendering")
+    return (
         <h3>Меню</h3>
+    )
+}
+
+function AccordionBody() {
+    console.log("AccordionBody rendering")
+    return (
         <ul>
             <li>1</li>
             <li>2</li>
             <li>3</li>
         </ul>
-    </div>
+    )
 }
 
 export default App;
