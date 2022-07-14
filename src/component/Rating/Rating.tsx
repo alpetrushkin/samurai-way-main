@@ -1,6 +1,10 @@
 import React from "react";
 
-export function Rating(props: any) {
+type RatingPropsType = {
+    value: 0 | 1 | 2 | 3 | 4 | 5
+}
+
+export function Rating(props: RatingPropsType) {
     console.log("Rating rendering")
     if (props.value === 1) {
         return (
@@ -23,7 +27,8 @@ export function Rating(props: any) {
                 <Star selected={false}/>
             </div>
         )
-    }if (props.value === 3) {
+    }
+    if (props.value === 3) {
         return (
             <div>
                 <Star selected={true}/>
@@ -31,30 +36,31 @@ export function Rating(props: any) {
                 <Star selected={true}/>
                 <Star selected={false}/>
                 <Star selected={false}/>
-            </div>
-        )
-    }if (props.value === 4) {
-        return (
-            <div>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={false}/>
-            </div>
-        )
-    }if (props.value === 5) {
-        return (
-            <div>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={true}/>
-                <Star selected={true}/>
             </div>
         )
     }
-    else {
+    if (props.value === 4) {
+        return (
+            <div>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={false}/>
+            </div>
+        )
+    }
+    if (props.value === 5) {
+        return (
+            <div>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+                <Star selected={true}/>
+            </div>
+        )
+    } else {
         return (
             <div>
                 <Star selected={false}/>
@@ -67,7 +73,11 @@ export function Rating(props: any) {
     }
 }
 
-function Star(props: any) {
+type StarPropsType = {
+    selected: boolean
+}
+
+function Star(props: StarPropsType) {
     console.log("Star rendering")
     if (props.selected === true) {
         return <span><b>star</b> </span>
