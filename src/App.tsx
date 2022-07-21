@@ -1,46 +1,54 @@
 import React from 'react';
 import './App.css';
-import {Accordion} from "./component/Accordion/Accordion";
-import {Rating} from "./component/Rating/Rating";
 
-function hello() {
-    debugger
-    alert('Hello IT-Kamasutra')
-}
-
-// hello()
 
 function App() {
-    console.log("App rendering")
-    return (
-        <div>
-            <PageTitle title={'This is APP Component'}/>
-            <PageTitle title={'My friends'}/>
-            {/*Article 1*/}
-            {/*<Rating value={5}/>*/}
-            <Accordion titleValue={'Menu'} collapsed={true}/>
-            <Accordion titleValue={'Users'} collapsed={true}/>
-            <Accordion titleValue={'Document'} collapsed={true}/>
-            {/*Article 2*/}
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
-        </div>
-    );
-}
-
-type PageTitlePropsType = {
-    title: string
-}
-
-function PageTitle(props: PageTitlePropsType) {
-    console.log("PageTitle rendering")
-    return (
-        <h1>--- {props.title} ---</h1>
-    )
+   return (
+      <div className='app-wrapper'>
+         <header>
+            <img src="https://cdn-icons-png.flaticon.com/512/3800/3800024.png" alt=""/>
+         </header>
+         <nav>
+            <div>
+               <a href="#">Profile</a>
+            </div>
+            <div>
+               <a href="#">Messages</a>
+            </div>
+            <div>
+               <a href="#">News</a>
+            </div>
+            <div>
+               <a href="#">Music</a>
+            </div>
+            <div>
+               <a href="#">Settings</a>
+            </div>
+         </nav>
+         <div className='content'>
+            <div>
+               <img src="https://klike.net/uploads/posts/2019-11/1572608842_3.jpg" alt=""/>
+            </div>
+            <div>
+               ava + description
+            </div>
+            <div>
+               My posts
+               <div>
+                  New post
+               </div>
+               <div>
+                  <div>
+                     post 1
+                  </div>
+                  <div>
+                     post 2
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   );
 }
 
 
