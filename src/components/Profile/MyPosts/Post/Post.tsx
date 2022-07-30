@@ -8,7 +8,7 @@ type PostType = {
 
 export const Post = (props: PostType) => {
    return (
-      <div className={s.item}>
+      <div className={s.dialog}>
          <img src="https://gamebomb.ru/files/galleries/001/3/32/351570.jpg" alt=""/>
          {props.message}
          <div>
